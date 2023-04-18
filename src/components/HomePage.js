@@ -1,14 +1,18 @@
-import React from 'react';
 import SearchBar from './SearchBar';
+import CryptoList from './CryptoList';
+import Card from './Card';
 
 const HomePage = () => {
     return (
-        <div className="homepage">
-            <h1>Cryptocurrency Tracker</h1>
+        <Card className="homepage">
+            <h1>Cryptocurrency Tracker</h1>  
             <p>Search and explore live cryptocurrency prices, market data, and more.</p>
             <SearchBar />
-        </div>
+            <div className="top-cryptocurrencies">
+                <CryptoList />
+            </div>
+        </Card>
     );
 };
 
-export default HomePage
+export default HomePage;

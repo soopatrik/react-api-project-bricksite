@@ -1,0 +1,7 @@
+.hoverable {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hoverable:hover {
+  background-color: #c0a88f;
+}

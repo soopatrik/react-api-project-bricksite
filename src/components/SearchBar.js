@@ -1,12 +1,14 @@
 import React from "react";
+import Card from "./Card";
 
 const SearchBar = () => {
   return (
-    <div className="search-bar">
+    <Card className="search-bar">
       <input type="text" placeholder="Search for a cryptocurrency..." />
-
-      <button>Search</button>
-    </div>
+      <button className="hoverable">
+        <i className="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </Card>
   );
 };
 
