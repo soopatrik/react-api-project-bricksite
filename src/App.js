@@ -1,5 +1,7 @@
-import HomePage from './components/HomePage';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CryptoDetails from "./components/pages/CryptoDetails";
+import HomePage from "./components/HomePage";
+import "./App.css";
 
 /* 
 Instead of the weather App, I decided to make something that's closer to my interest. I am working on two projects simultaneously,
@@ -9,12 +11,17 @@ all the info one might need about selected currency. As said, there won't be a l
 error process, I will be able to learn and deliver a stable and interesting project. 
 */
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <HomePage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/details/:id" element={<CryptoDetails />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
