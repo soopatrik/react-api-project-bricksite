@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CryptoList.css";
+import "./SearchBar.css";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const CryptoList = () => {
   const [cryptos, setCryptos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); // error handling
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,19 +34,24 @@ const CryptoList = () => {
   return (
     <Card className="crypto-list">
       <h1>Top Cryptocurrencies</h1>
+      <SearchBar search={search} setSearch={setSearch} />
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <ul>
-        {cryptos.map((crypto) => (
-          <Link to={`/details/${crypto.id}`} key={crypto.id}>
-            <li className="hoverable">
-              <img src={crypto.image} alt={`${crypto.name} logo`} />
-              <div>{crypto.name}</div>
-              <div>{crypto.symbol.toUpperCase()}</div>
-              <div>${crypto.current_price.toFixed(2)}</div>
-            </li>
-          </Link>
-        ))}
+        {cryptos
+          .filter((crypto) =>
+            crypto.name.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((crypto) => (
+            <Link to={`/details/${crypto.id}`} key={crypto.id}>
+              <li className="hoverable">
+                <img src={crypto.image} alt={`${crypto.name} logo`} />
+                <div>{crypto.name}</div>
+                <div>{crypto.symbol.toUpperCase()}</div>
+                <div>${crypto.current_price.toFixed(2)}</div>
+              </li>
+            </Link>
+          ))}
       </ul>
     </Card>
   );

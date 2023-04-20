@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./CryptoDetails.css";
 import Card from "../Card";
 
 const CryptoDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [cryptoDetails, setCryptoDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -30,8 +31,12 @@ const CryptoDetails = () => {
 
   return (
     <Card className="crypto-details">
-      <h1>Cryptocurrency Details</h1>
-      <p>Find detailed cryptocurrency info</p>
+      <button onClick={() => navigate(-1)} className="back-button">
+        <i className="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <div className="header-container">
+        <h1>Cryptocurrency Details</h1>
+      </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {cryptoDetails ? (

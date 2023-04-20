@@ -11,6 +11,10 @@ all the info one might need about selected currency. As said, there won't be a l
 error process, I will be able to learn and deliver a stable and interesting project. 
 */
 
+// The Public API has a rate limit of 10-30 calls/minute, so after reaching a certain number of requests, network error appears.
+
+
+
 const App = () => {
   return (
     <div className="App">

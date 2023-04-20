@@ -1,0 +1,26 @@
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .search-bar input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .search-bar button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background-color: #88795c;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-bar .fa {
+    color: #ffffff;
+  }

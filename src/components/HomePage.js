@@ -1,4 +1,3 @@
-import SearchBar from "./SearchBar";
 import CryptoList from "./CryptoList";
 import Card from "./Card";
 
@@ -9,7 +8,6 @@ const HomePage = ({ children }) => {
       <p>
         Search and explore live cryptocurrency prices, market data, and more.
       </p>
-      <SearchBar />
       <div className="top-cryptocurrencies">
         <CryptoList />
       </div>
