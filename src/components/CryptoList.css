@@ -60,6 +60,6 @@
 
   .crypto-list p {
     line-height: 1.2;
-    margin-top: 0; /* Add this */
-    margin-bottom: 0; /* Add this */
+    margin-top: 0; 
+    margin-bottom: 0; 
   }
