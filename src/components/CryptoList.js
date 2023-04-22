@@ -43,14 +43,14 @@ const CryptoList = () => {
             crypto.name.toLowerCase().includes(search.toLowerCase())
           )
           .map((crypto) => (
-            <Link to={`/details/${crypto.id}`} key={crypto.id}>
-              <li className="hoverable">
-                <img src={crypto.image} alt={`${crypto.name} logo`} />
-                <div>{crypto.name}</div>
-                <div>{crypto.symbol.toUpperCase()}</div>
-                <div>${crypto.current_price.toFixed(2)}</div>
-              </li>
-            </Link>
+            <li key={crypto.id} className="hoverable">
+              <Link to={`/details/${crypto.id}`} className="crypto-link">
+                <img src={crypto.image} alt={crypto.name} />
+                <h3>{crypto.name}</h3>
+                <p>Rank: {crypto.market_cap_rank}</p>
+                <p>Current Price: ${crypto.current_price.toFixed(2)}</p>
+              </Link>
+            </li>
           ))}
       </ul>
     </Card>

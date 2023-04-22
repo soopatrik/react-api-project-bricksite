@@ -1,6 +1,6 @@
 .crypto-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -21,20 +21,45 @@
 
 .crypto-list li {
   background-color: #88795c;
-  padding: 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+  min-height: 150px;
 }
 
   .crypto-list img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+  }
+  .crypto-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    flex-grow: 1; 
+    flex-shrink: 1; 
+  }
+
+  .crypto-list h3 {
+    margin-top: 0px; 
+    margin-bottom: 5px; 
+  }
+
+  .crypto-list p {
+    line-height: 1.2;
+    margin-top: 0; /* Add this */
+    margin-bottom: 0; /* Add this */
   }

@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CryptoDetails from "./components/pages/CryptoDetails";
 import HomePage from "./components/HomePage";
 import "./App.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 /* 
 Instead of the weather App, I decided to make something that's closer to my interest. I am working on two projects simultaneously,
@@ -12,8 +14,6 @@ error process, I will be able to learn and deliver a stable and interesting proj
 */
 
 // The Public API has a rate limit of 10-30 calls/minute, so after reaching a certain number of requests, network error appears.
-
-
 
 const App = () => {
   return (
